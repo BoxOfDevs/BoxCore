@@ -40,8 +40,8 @@ wp="install_log/log_wget_php"
 	mkdir install_log
 	echo "system> Installing Tesseract..."
 	wget --no-check-certificate https://github.com/pmmp/PocketMine-MP/archive/master.zip >>./$w 2>>./$w
-  	chmod 777 master.zip >>./$l 2>>./$le
-	unzip -o master.zip >>./$l 2>>./$le 
+  chmod 777 master.zip >>./$l 2>>./$le
+	unzip -o master.zip >>./$l 2>>./$le
 	chmod 777 Tesseract-master >>./$l 2>>./$le
 	cd Tesseract-master >>./$l 2>>./$le
 	chmod 777 src >>../$l 2>>../$le
@@ -62,7 +62,7 @@ wp="install_log/log_wget_php"
 	chmod 777 TravisTest.php >>./$l 2>>./$le
 	mkdir plugins >>./$l 2>>./$le
 	echo
-        echo "system> PocketMine & Plugswork installation completed! Installing DevTools..."
+        echo "system> ImagicalMine & Plugswork installation completed! Installing ImagicalDevTools..."
         wget --no-check-certificate -O plugins/ImagicalDevTools.phar https://github.com/pmmp/PocketMine-DevTools/releases/download/v1.11.2/PocketMine-DevTools_v1.11.2.phar >>./$w 2>>./$w
         echo
         echo "system> Installation successfully completed!"
