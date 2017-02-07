@@ -31,14 +31,11 @@ script:
 - cd plugins
 - git clone https://github.com/BoxOfDevs/BoxCore
 - cd BoxCore
-- cp -r PHP-Build ..
-- cd ..
 - chmod 777 BoxCore
 - rm -rf BoxCore
-- mv PHP-Build BoxCore
 - cd BoxCore
 - cd ../..
-- php TravisTest.php
+- php tests/TravisTest.php
 
 # after_script:
 # - cd /home/travis/build
