@@ -1,5 +1,6 @@
 # BoxCore
-Our newest plugin!
+Our newest plugin! <br>
+Travis-CI is coming soon!
 
 # Proposed features:
 - SurvivalGames by ImagicalGamer
