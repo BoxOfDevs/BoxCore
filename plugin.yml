@@ -11,7 +11,6 @@
 name: BoxCore
 author: BoxOfDevs
 version: 1.0
-load: POSTWORLD
 api: [2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3]
 main: BoxCore\Main
 commands: []
