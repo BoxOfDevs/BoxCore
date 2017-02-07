@@ -31,7 +31,6 @@ script:
 - cd plugins
 - git clone https://github.com/BoxOfDevs/BoxCore
 - ls /home/travis/build/artifacts/plugins/BoxCore
-- cp -r /home/travis/build/artifacts/plugins/BoxCore/BoxCore-master/* /home/travis/build/artifacts/plugins/BoxCore
 - cd ../
 - php plugins/BoxCore/Travis.php
 
