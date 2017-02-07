@@ -1,6 +1,6 @@
 <?php
 
-namespace BoxCore;
+namespace BoxofDevs\BoxCore;
 
 use pocketmine\event\Listener;
 use pocketmine\level\Level;
