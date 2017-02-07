@@ -8,7 +8,7 @@ $server = proc_open(PHP_BINARY . " src/pocketmine/PocketMine.php --no-wizard", [
 if(!is_resource($server)){
 	die('Failed to create process');
 }
-fwrite($pipes[0], "plugins\makeplugin BoxCore\nstop\n\n");
+fwrite($pipes[0], "plugins\ncompileplugin BoxCore\nstop\n\n");
 fclose($pipes[0]);
 while(!feof($pipes[1])){
 	echo fgets($pipes[1]);
