@@ -1,1 +1,3 @@
-php Travis.php
+echo pwd
+pwd
+# php Travis.php
