@@ -13,5 +13,4 @@ Our newest plugin!
 - AFK Kicker
 - Command Blocks by Ad5001
 - Build Vote game
-- Auth by Me
 - Many more.
