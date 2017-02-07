@@ -1,5 +1,5 @@
 <?php
-$server = proc_open(PHP_BINARY . " ../src/pocketmine/PocketMine.php --no-wizard", [
+$server = proc_open(PHP_BINARY . " plugins/src/pocketmine/PocketMine.php --no-wizard", [
 //$server = proc_open("./start.sh --no-wizard", [
 	0 => ["pipe", "r"],
 	1 => ["pipe", "w"],
