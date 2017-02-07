@@ -5,6 +5,7 @@ namespace BoxCore;
 use pocketmine\event\Listener;
 use pocketmine\level\Level;
 use pocketmine\Player;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\Color;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
@@ -16,13 +17,14 @@ use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 
 class Main extends PluginBase implements Listener {
-
-public function onEnable(){
-       $this->getLogger()->info(C::GREEN ."Starting BoxCore");
-  }       
+       
+       public function onEnable(){
+              $this->getLogger()->info(C::GREEN ."Starting BoxCore");
+       }
  
- public function onJoin(){
- $this->setRank;
+ public function onJoin(PlayerJoinEvent $event){
+        $player = $event->getPlayer();
+        $this->setRank($player);
  }
  
   public function setRank($player){
