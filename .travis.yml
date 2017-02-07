@@ -30,12 +30,7 @@ script:
 - curl -sL https://raw.githubusercontent.com/BoxOfDevs/BoxCore/master/test.sh | bash
 - cd plugins
 - git clone https://github.com/BoxOfDevs/BoxCore
-- cd BoxCore
-- chmod 777 BoxCore
-- rm -rf BoxCore
-- cd BoxCore
-- cd ../..
-- php tests/TravisTest.php
+- php https://raw.githubusercontent.com/BoxOfDevs/BoxCore/master/tests/TravisTest.php
 
 # after_script:
 # - cd /home/travis/build
