@@ -16,7 +16,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 
-class Main extends PluginBase implements Listener {
+class main extends PluginBase implements Listener {
        
        public function onEnable(){
               $this->getLogger()->info(C::GREEN ."Starting BoxCore");
