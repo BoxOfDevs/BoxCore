@@ -30,7 +30,7 @@ script:
 - curl -sL https://raw.githubusercontent.com/BoxOfDevs/BoxCore/master/test.sh | bash
 - cd plugins
 - git clone https://github.com/BoxOfDevs/BoxCore
-- phpunit Travis.php
+- curl -sL https://raw.githubusercontent.com/BoxOfDevs/BoxCore/master/travis/travis.sh | bash
 
 # after_script:
 # - cd /home/travis/build
