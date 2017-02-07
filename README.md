@@ -1,6 +1,6 @@
 # BoxCore
 Our newest plugin! <br>
-Travis-CI is coming soon!
+[![Build Status](https://travis-ci.org/BoxOfDevs/BoxCore.svg?branch=master)](https://travis-ci.org/BoxOfDevs/BoxCore)
 
 # Proposed features:
 - SurvivalGames by ImagicalGamer
