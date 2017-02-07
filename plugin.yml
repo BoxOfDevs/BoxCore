@@ -1,0 +1,17 @@
+---
+#  ____                _____                  
+# |  _ \              / ____|                 
+# | |_) |  ___ __  __| |      ___   _ __  ___ 
+# |  _ <  / _ \\ \/ /| |     / _ \ | '__|/ _ \
+# | |_) || (_) |>  < | |____| (_) || |  |  __/
+# |____/  \___//_/\_\ \_____|\___/ |_|   \___|    
+# Public Pocketmine server core
+
+
+name: BoxCore
+author: BoxOfDevs
+api: [2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3]
+main: BoxOfDevs\BoxCore\Main
+commands:[]
+permissions:[]
+...
