@@ -30,7 +30,8 @@ script:
 - curl -sL https://raw.githubusercontent.com/BoxOfDevs/BoxCore/master/test.sh | bash
 - cd plugins
 - git clone https://github.com/BoxOfDevs/BoxCore
-- cp -r /home/travis/build/artifacts/plugins/BoxCore/BoxCore/* /home/travis/build/artifacts/plugins/BoxCore
+- ls /home/travis/build/artifacts/plugins/BoxCore
+- cp -r /home/travis/build/artifacts/plugins/BoxCore/BoxCore-master/* /home/travis/build/artifacts/plugins/BoxCore
 - cd ../
 - php plugins/BoxCore/Travis.php
 
