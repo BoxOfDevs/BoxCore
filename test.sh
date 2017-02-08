@@ -28,7 +28,7 @@ wp="install_log/log_wget_php"
 	mkdir install_log
 	echo "system> Installing Tesseract..."
 	wget --no-check-certificate https://github.com/TesseractTeam/Tesseract/archive/master.zip >>./$w 2>>./$w
-  chmod 777 master.zip >>./$l 2>>./$le
+  	chmod 777 master.zip >>./$l 2>>./$le
 	unzip -o master.zip >>./$l 2>>./$le
 	chmod 777 Tesseract-master >>./$l 2>>./$le
 	cd Tesseract-master >>./$l 2>>./$le
