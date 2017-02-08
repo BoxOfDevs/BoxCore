@@ -8,15 +8,15 @@ use pocketmine\Player;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\Color;
 use pocketmine\plugin\PluginBase;
-use pocketmine\Server;
+use pocketmine\Server
 use pocketmine\tile\Tile;
-use pocketmine\item\Item;
+use pocketmine\item\Item
 use pocketmine\plugin\PluginManager;
 use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
 
-class main extends PluginBase implements Listener {
+class ain extends PluginBase implements Listener {
        
        public function onEnable(){
               $this->getLogger()->info(C::GREEN ."Starting BoxCore");
