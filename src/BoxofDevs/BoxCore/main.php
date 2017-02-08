@@ -31,22 +31,22 @@ class main extends PluginBase implements Listener {
        $rankyml = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
        $rank = $rankyml->get($player->getName());  
        if($rank == "Owner"){
-       $player->setNameTag(C::GRAY ."[". C::DARK_PURPLE ."Owner". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::DARK_PURPLE ."Owner:". C::GRAY ."] ". C::AQUA . $player->getName());
   }
   if($rank == "Co-Owner"){
-       $player->setNameTag(C::GRAY ."[". C::GREEN ."Co-Owner". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::GREEN ."Co-Owner:". C::GRAY ."] ". C::AQUA . $player->getName());
   }  
   if($rank == "Admin"){
-       $player->setNameTag(C::GRAY ."[". C::DARK_BLUE ."Administrator". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::DARK_BLUE ."Administrator:". C::GRAY ."] ". C::AQUA . $player->getName());
   }
   if($rank == "Builder"){
-       $player->setNameTag(C::GRAY ."[". C::YELLOW ."Builder". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::YELLOW ."Builder:". C::GRAY ."] ". C::AQUA . $player->getName());
   }
   if($rank == "VIP"){
-       $player->setNameTag(C::GRAY ."[". C::GOLD ."VIP". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::GOLD ."VIP:". C::GRAY ."] ". C::AQUA . $player->getName());
   }
   else{
-       $player->setNameTag(C::GRAY ."[". C::YELLOW ."Player". C::GRAY ."] ". C::AQUA . $player->getName());
+       $player->setNameTag(C::GRAY ."[". C::YELLOW ."Player:". C::GRAY ."] ". C::AQUA . $player->getName());
    }
   }
   
