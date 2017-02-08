@@ -12,22 +12,10 @@
 while :
 do
 clear
-cat << "EOF"
-
-  _                       _           _ __  __ _             
- (_)                     (_)         | |  \/  (_)            
-  _ _ __ ___   __ _  __ _ _  ___ __ _| | \  / |_ _ __   ___  
- | | '_ ` _ \ / _` |/ _` | |/ __/ _` | | |\/| | | '_ \ / _ \ 
- | | | | | | | (_| | (_| | | (_| (_| | | |  | | | | | |  __/ 
- |_|_| |_| |_|\__,_|\__, |_|\___\__,_|_|_|  |_|_|_| |_|\___| 
-                     __/ |                                   
-                    |___/   
-  
-EOF
 
 # shopt -s extglob
-echo "system> Welcome to the Tesseract and ImagicalDevTools installer!"
-echo "system> This installer will automatically install Tesseract and ImagicalDevTools for your server!"
+echo "system> Welcome to the Tesseract and DevTools installer!"
+echo "system> This installer will automatically install Tesseract and DevTools for your server!"
 echo "system> Ensure you are running Linux 64-bit, or the installer will not install properly."
 z="PHP_7.0.3_x86-64_Linux.tar.gz"
 l="install_log/log"
@@ -62,7 +50,7 @@ wp="install_log/log_wget_php"
 	chmod 777 TravisTest.php >>./$l 2>>./$le
 	mkdir plugins >>./$l 2>>./$le
 	echo
-        echo "system> ImagicalMine & Plugswork installation completed! Installing ImagicalDevTools..."
+        echo "system> ImagicalMine & BoxCore installation completed! Installing DevTools..."
         wget --no-check-certificate -O plugins/DevTools.phar https://github.com/TesseractTeam/DevTools/releases/download/1/DevTools.phar >>./$w 2>>./$w
         echo
         echo "system> Installation successfully completed!"
