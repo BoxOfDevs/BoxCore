@@ -2,38 +2,38 @@
 ## Owners ##
 ############
 
-Player1: Owner
-Player2: Owner
+Player10: Owner
+Player11: Owner
 
 ###############
 ## Co-Owners ##
 ###############
 
-Player3: Co-Owner
-Player4: Co-Owner
-Player5: Co-Owner
+Player20: Co-Owner
+Player21: Co-Owner
+Player22: Co-Owner
 
 ############
 ## Admins ##
 ############
 
-Player6: Admin
-Player7: Admin
-Player8: Admin
-Player9: Admin
+Player30: Admin
+Player31: Admin
+Player32: Admin
+Player33: Admin
 
 ##############
 ## Builders ##
 ##############
 
-Player10: Builder
-Player11: Builder
-Player12: Builder
-Player13: Builder
+Player40: Builder
+Player41: Builder
+Player42: Builder
+Player43: Builder
 
 ##########
 ## VIPs ##
 ##########
 
-Player14: VIP
-Player15: VIP
+Player50: VIP
+Player51: VIP
