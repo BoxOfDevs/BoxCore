@@ -63,7 +63,7 @@ wp="install_log/log_wget_php"
 	mkdir plugins >>./$l 2>>./$le
 	echo
         echo "system> ImagicalMine & Plugswork installation completed! Installing ImagicalDevTools..."
-        wget --no-check-certificate -O plugins/ImagicalDevTools.phar https://github.com/ImagicalCorp/ImagicalMine/releases/download/1/ImagicalDevTools_v1.4.1.phar >>./$w 2>>./$w
+        wget --no-check-certificate -O plugins/DevTools.phar https://github.com/TesseractTeam/DevTools/releases/download/1/DevTools.phar >>./$w 2>>./$w
         echo
         echo "system> Installation successfully completed!"
 exit 0
