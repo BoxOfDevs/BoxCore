@@ -16,7 +16,10 @@ while(!feof($pipes[1])){
 fclose($pipes[1]);
 fclose($pipes[2]);
 echo "\n\nReturn value: ". proc_close($server) ."\n";
-if(count(glob("plugins/ImagicalDevTools/BoxCore*.phar")) === 0){
-	echo "The BoxCore script has not been configured to create a phar!\nPlease see our releases section on our website to download a stable build.";
+if(count(glob("crashdumps/CrashDump*.log")) === 0){
+	echo "The BoxCore plugin has no errors and is working well!\nYAY!";
 	exit(0);
+}else{
+	echo "The BoxCore plugin has a syntax error.\nIt will be fixed whenever the developers have a chance.\nPlease be patient and wait for them to fix it.";
+	exit(1);
 }
