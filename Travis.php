@@ -17,8 +17,6 @@ fclose($pipes[1]);
 fclose($pipes[2]);
 echo "\n\nReturn value: ". proc_close($server) ."\n";
 if(count(glob("plugins/ImagicalDevTools/BoxCore*.phar")) === 0){
-	echo "No BoxCore phar created!\n";
-	exit(1);
-}else{
+	echo "The BoxCore script has not been configured to create a phar!\nPlease see our releases section on our website to download a stable build.";
 	exit(0);
 }
