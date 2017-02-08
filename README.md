@@ -1,6 +1,6 @@
 # BoxCore
 Our newest plugin! <br>
-
+[Chat with us on Discord.](https://discord.gg/PBFQj5K)
 # Download this plugin!
 - Visit our website to download the plugin OR,
 - If this ↓ button says "build|passing", then you may download the plugin and run it from the SRC using DevTools.
