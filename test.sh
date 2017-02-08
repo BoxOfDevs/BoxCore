@@ -9,8 +9,6 @@
 # 
 # This file is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 # Before you start doing anything, read the license for more detail into what you are allowed to do and not do.
-while :
-do
 clear
 
 # shopt -s extglob
@@ -55,4 +53,3 @@ wp="install_log/log_wget_php"
         echo
         echo "system> Installation successfully completed!"
 exit 0
-done
