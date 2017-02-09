@@ -19,4 +19,6 @@ Our newest plugin! <br>
 - AFK Kicker
 - Command Blocks by Ad5001
 - Build Vote game
+- rank system by remotevase
+- hopefully InstaPerms implementation because the current rank system is incompatible with PurePerms.
 - Many more.
