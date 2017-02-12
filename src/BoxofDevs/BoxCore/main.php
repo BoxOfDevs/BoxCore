@@ -12,6 +12,7 @@ use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\event\player\PlayerPreLoginEvent;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\tile\Tile;
@@ -25,6 +26,7 @@ use pocketmine\command\CommandSender;
 class main extends PluginBase implements Listener {
 	
 	public $prefix = "";
+	public $console = C::DARK_RED."You can only run this Command In-Game.";
 	
 	public function onLoad(){
 		$this->getLogger()->info(C::YELLOW."Box is opening..");
@@ -38,13 +40,23 @@ class main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 	}
 	
+	public function PreLogin(PlayerPreLoginEvent $event){
+		$config = $this->getConfig();
+		$player = $event->getPlayer();
+		if($config->get("AlwaysSpawn") == "true"){
+			$player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+		}
+	}
+	
 	public function onJoin(PlayerJoinEvent $event){
+		$config = $this->getConfig();
 		$event->setJoinMessage("");
 		$player = $event->getPlayer();
         $this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
+		$config = $this->getConfig();
 		$event->setQuitMessage("");
 		$player = $event->getPlayer();
 	}
@@ -77,13 +89,19 @@ class main extends PluginBase implements Listener {
 		if($cmd->getName() == "Lobby"){
 			if($sender instanceof Player){
 				$sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+				$sender->sendMessage(C::GREEN."Teleporting..");
 			}else{
-				$sender->sendMessage(C::RED."You can't use this CMD in Console!");
+				$sender->sendMessage($this->console);
 			}
 		}
 		switch($cmd->getName()){
 			case "BOD":
-			$sender->sendMessage(C::GOLD."Visit BoxOfDevs on Github: ".C::GRAY."https://github.com/BoxOfDevs");
+			if($sender instanceof Player){
+				$sender->sendMessage("This server uses BoxCore from BoxOfDevs.");
+			}else{
+				$sender->sendMessage(C::GOLD."Visit BoxOfDevs on Github: ".C::GRAY."https://github.com/BoxOfDevs");
+			}
+			return true;
 		}
 	}
 	
