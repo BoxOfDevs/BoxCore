@@ -78,7 +78,7 @@ class main extends PluginBase implements Listener {
 			if($sender instanceof Player){
 				$sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
 			}else{
-				$sender->sendMessage(C::RED:"You can't use this CMD in Console!");
+				$sender->sendMessage(C::RED."You can't use this CMD in Console!");
 			}
 		}
 		switch($cmd->getName()){
