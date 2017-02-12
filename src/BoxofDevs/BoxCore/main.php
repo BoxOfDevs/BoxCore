@@ -51,9 +51,9 @@ class main extends PluginBase implements Listener {
 			$player->setNameTag(C::YELLOW."Builder".C::GRAY." | ".C::AQUA.$name);
 		}
 		if($rank == "VIP"){
-			$player->setNameTag(C::GOLD."VIP".C::GRAY ." | ".C::AQUA.$name);
+			$player->setNameTag(C::GOLD."VIP".C::GRAY." | ".C::AQUA.$name);
 		}else{
-			$player->setNameTag(C::YELLOW."Player".C::GRAY." | ".C::AQUA $name);
+			$player->setNameTag(C::YELLOW."Player".C::GRAY." | ".C::AQUA.$name);
 		}
 	}
 	
