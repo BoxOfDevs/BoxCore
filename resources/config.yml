@@ -4,15 +4,4 @@ Prefix: '§7[§cBoxCore§7]'
 
 # Plugin version DO NOT EDIT!
 Version: 1.0
-
-###########################################################
-## This is the title used for players who are not listed ##
-##          in any of the categories in ranks.yml        ##
-##  If empty, they will have no title, and an aqua name  ##
-###########################################################
-
-RegularPlayerTitle: Player
-
-# Teleport player on join to Main Spawn
-AlwaysSpawn: true
 ...
