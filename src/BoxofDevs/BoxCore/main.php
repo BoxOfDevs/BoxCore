@@ -62,8 +62,8 @@ class main extends PluginBase implements Listener {
 		#$event->setQuitMessage("");
 		$player = $event->getPlayer();
 	}
-
-    public function setRank(Player $player){
+	
+	public function setRank(Player $player){
 		$name = $player->getName();
 		$rankyml = new Config($this->getDataFolder()."/rank.yml", Config::YAML);
 		$rank = $rankyml->get($name);  
