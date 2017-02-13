@@ -84,6 +84,10 @@ class main extends PluginBase implements Listener {
 		}
 	}
 	
+	public function transferPlayer(Player $player, String $ip, Int $port){
+		
+	}
+	
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		$name = $sender->getName();
 		if($cmd->getName() == "Lobby"){
