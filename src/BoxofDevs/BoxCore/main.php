@@ -41,8 +41,8 @@ class main extends PluginBase implements Listener {
 
     /**
      * @param PlayerPreLoginEvent $event
-     */
-    public function PreLogin(PlayerPreLoginEvent $event){
+    */
+	public function PreLogin(PlayerPreLoginEvent $event){
 		$config = $this->getConfig();
 		$player = $event->getPlayer();
 		if($config->get("AlwaysSpawn") == "true"){
@@ -92,8 +92,8 @@ class main extends PluginBase implements Listener {
      * @param string $label
      * @param array $args
      * @return bool
-     */
-    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+    */
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		$name = $sender->getName();
 		switch($cmd->getName()){
 			case "bod":
