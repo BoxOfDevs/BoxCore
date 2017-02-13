@@ -18,7 +18,6 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\tile\Tile;
 use pocketmine\item\Item;
 use pocketmine\utils\Config;
-use pocketmine\utils\Color;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -27,20 +26,23 @@ class main extends PluginBase implements Listener {
 	
 	public $prefix = "";
 	public $console = C::DARK_RED."You can only run this Command In-Game.";
-	
-	public function onLoad(){
+
+    public function onLoad(){
 		$this->getLogger()->info(C::YELLOW."Box is opening..");
 	}
-	
-	public function onEnable(){
+
+    public function onEnable(){
 		$this->getLogger()->info(C::GREEN."Box opened!");
 		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
 		$config = $this->getConfig();
 		$this->prefix = $config->get("Prefix")." ";
 		$this->saveDefaultConfig();
 	}
-	
-	public function PreLogin(PlayerPreLoginEvent $event){
+
+    /**
+     * @param PlayerPreLoginEvent $event
+     */
+    public function PreLogin(PlayerPreLoginEvent $event){
 		$config = $this->getConfig();
 		$player = $event->getPlayer();
 		if($config->get("AlwaysSpawn") == "true"){
@@ -60,8 +62,8 @@ class main extends PluginBase implements Listener {
 		#$event->setQuitMessage("");
 		$player = $event->getPlayer();
 	}
-	
-	public function setRank($player){
+
+    public function setRank(Player $player){
 		$name = $player->getName();
 		$rankyml = new Config($this->getDataFolder()."/rank.yml", Config::YAML);
 		$rank = $rankyml->get($name);  
@@ -83,8 +85,15 @@ class main extends PluginBase implements Listener {
 			$player->setNameTag(C::YELLOW."Player".C::GRAY." | ".C::AQUA.$name);
 		}
 	}
-	
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+
+    /**
+     * @param CommandSender $sender
+     * @param Command $cmd
+     * @param string $label
+     * @param array $args
+     * @return bool
+     */
+    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		$name = $sender->getName();
 		switch($cmd->getName()){
 			case "bod":
@@ -104,8 +113,8 @@ class main extends PluginBase implements Listener {
 				return true;
 		}
 	}
-	
-	public function onDisable(){
+
+    public function onDisable(){
 		$this->getLogger()->info(C::RED."Closing Box!");
 	}
 }
