@@ -102,7 +102,6 @@ class main extends PluginBase implements Listener {
 					$sender->sendMessage($this->console);
 				}
 				return true;
-			}
 		}
 	}
 	
