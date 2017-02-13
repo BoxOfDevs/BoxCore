@@ -50,14 +50,14 @@ class main extends PluginBase implements Listener {
 	
 	public function onJoin(PlayerJoinEvent $event){
 		$config = $this->getConfig();
-		$event->setJoinMessage("");
+		#$event->setJoinMessage("");
 		$player = $event->getPlayer();
         $this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
 		$config = $this->getConfig();
-		$event->setQuitMessage("");
+		#$event->setQuitMessage("");
 		$player = $event->getPlayer();
 	}
 	
@@ -86,22 +86,23 @@ class main extends PluginBase implements Listener {
 	
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		$name = $sender->getName();
-		if($cmd->getName() == "Lobby"){
-			if($sender instanceof Player){
-				$sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
-				$sender->sendMessage(C::GREEN."Teleporting..");
-			}else{
-				$sender->sendMessage($this->console);
-			}
-		}
 		switch($cmd->getName()){
-			case "BOD":
-			if($sender instanceof Player){
-				$sender->sendMessage("This server uses BoxCore from BoxOfDevs.");
-			}else{
-				$sender->sendMessage(C::GOLD."Visit BoxOfDevs on Github: ".C::GRAY."https://github.com/BoxOfDevs");
+			case "bod":
+				if($sender instanceof Player){
+					$sender->sendMessage("This server uses BoxCore from BoxOfDevs.");
+				}else{
+					$sender->sendMessage(C::GOLD."Visit BoxOfDevs on Github: ".C::GRAY."https://github.com/BoxOfDevs");
+				}
+				return true;
+			case "lobby":
+				if($sender instanceof Player){
+					$sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+					$sender->sendMessage(C::GREEN."Teleporting..");
+				}else{
+					$sender->sendMessage($this->console);
+				}
+				return true;
 			}
-			return true;
 		}
 	}
 	
