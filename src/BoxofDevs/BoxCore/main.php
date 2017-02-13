@@ -2,32 +2,75 @@
 
 namespace BoxofDevs\BoxCore;
 
-use pocketmine\plugin\PluginBase;
-use pocketmine\scheduler\PluginTask;
+//Blocks
+use pocketmine\block\Block;
+
+//Command
+use pocketmine\command\CommandSender;
+use pocketmine\command\Command;
+
+//Entity
+use pocketmine\entity\Effect;
+
+//Events
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
-use pocketmine\command\CommandSender;
-use pocketmine\command\Command;
-use pocketmine\utils\TextFormat as C;
-use pocketmine\utils\Config;
-use pocketmine\math\Vector3;
-use pocketmine\level\Position;
-use pocketmine\Player;
-use pocketmine\block\Block;
-use pocketmine\tile\Sign;
-use pocketmine\level\Level;
-use pocketmine\item\Item;
+use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\player\PlayerChatEvent;
-use pocketmine\entity\Effect;
 use pocketmine\event\entity\EntityLevelChangeEvent ; 
-use pocketmine\tile\Chest;
-use pocketmine\inventory\ChestInventory;
 use pocketmine\event\plugin\PluginEvent;
+
+//Inventory
+use pocketmine\inventory\ChestInventory;
+
+//Item
+use pocketmine\item\Item;
+
+//Lang
+
+//Level
+use pocketmine\level\Level;
+use pocketmine\level\Position;
+
+//Math
+use pocketmine\math\Vector3;
+
+//Metadata
+
+//nbt
+
+//network
+
+//permission
+
+//plugin
+use pocketmine\plugin\PluginBase;
+
+//resourcepacks
+
+//resources
+
+//scheduler
+use pocketmine\scheduler\PluginTask;
+
+//tile
+use pocketmine\tile\Sign;
+use pocketmine\tile\Chest;
+
+//utils
+use pocketmine\utils\TextFormat as C;
+use pocketmine\utils\Config;
+
+//wizard
+
+//none of the above
+use pocketmine\Player;
+
 
 class main extends PluginBase implements Listener {
 	
