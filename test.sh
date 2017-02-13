@@ -49,7 +49,7 @@ wp="install_log/log_wget_php"
 	mkdir plugins >>./$l 2>>./$le
 	echo
         echo "system> ImagicalMine & BoxCore installation completed! Installing DevTools..."
-        wget --no-check-certificate -O plugins/DevTools.phar https://github.com/TesseractTeam/DevTools/releases/download/1/DevTools.phar >>./$w 2>>./$w
+        wget --no-check-certificate -O plugins/DevTools.phar https://github.com/TesseractTeam/Tesseract/releases/download/DevTools_v1.2/DevTools_v1.2.phar >>./$w 2>>./$w
         echo
         echo "system> Installation successfully completed!"
 exit 0
