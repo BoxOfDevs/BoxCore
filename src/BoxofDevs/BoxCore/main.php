@@ -38,10 +38,10 @@ class main extends PluginBase implements Listener {
 		$this->prefix = $config->get("Prefix")." ";
 		$this->saveDefaultConfig();
 	}
-
-    /**
-     * @param PlayerPreLoginEvent $event
-    */
+	
+	/**
+	* @param PlayerPreLoginEvent $event
+	*/
 	public function PreLogin(PlayerPreLoginEvent $event){
 		$config = $this->getConfig();
 		$player = $event->getPlayer();
@@ -54,7 +54,7 @@ class main extends PluginBase implements Listener {
 		$config = $this->getConfig();
 		#$event->setJoinMessage("");
 		$player = $event->getPlayer();
-        $this->setRank($player);
+		$this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
@@ -85,14 +85,14 @@ class main extends PluginBase implements Listener {
 			$player->setNameTag(C::YELLOW."Player".C::GRAY." | ".C::AQUA.$name);
 		}
 	}
-
-    /**
-     * @param CommandSender $sender
-     * @param Command $cmd
-     * @param string $label
-     * @param array $args
-     * @return bool
-    */
+	
+	/**
+	* @param CommandSender $sender
+	* @param Command $cmd
+	* @param string $label
+	* @param array $args
+	* @return bool
+	*/
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		$name = $sender->getName();
 		switch($cmd->getName()){
