@@ -37,3 +37,12 @@ Player43: Builder
 
 Player50: VIP
 Player51: VIP
+
+###########################################################
+## This is the title used for players who are not listed ##
+##          in any of the categories in ranks.yml        ##
+##  If empty, they will have no title, and an aqua name  ##
+##     With the format of "| Name" in their nametag!     ##
+###########################################################
+ 
+ RegularPlayerTitle: Player
