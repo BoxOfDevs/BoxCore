@@ -106,7 +106,7 @@ class main extends PluginBase implements Listener {
 	public function setRank(Player $player){
 		$rankyml = new Config($this->getDataFolder()."/rank.yml", Config::YAML);
 		$rank = $rankyml->get($player->getName());
-		$regular = $rankyml->get("RegularPlayerName");
+		$regular = $rankyml->get("RegularPlayerTitle");
 		if($rank == "Owner"){
 			$player->setNameTag(C::DARK_PURPLE."Owner".C::GRAY." | ".C::AQUA. $player->getName());
 		}
