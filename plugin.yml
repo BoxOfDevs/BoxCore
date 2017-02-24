@@ -1,4 +1,3 @@
----
 #  ____                _____                  
 # |  _ \              / ____|                 
 # | |_) |  ___ __  __| |      ___   _ __  ___ 
@@ -13,5 +12,13 @@ version: 1.0
 api: [2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4]
 main: BoxofDevs\BoxCore\main
 description: "BoxCore: A Public Core plugin for PocketMine and Forks."
-commands: []
-...
+commands:
+    lobby:
+        description: "Lobby CMD"
+        aliases: [Lobby]
+    home:
+        description: "Home CMD"
+    ishome:
+        description: "IsHome CMD"
+    sethome:
+        description: "setHome CMD"

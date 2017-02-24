@@ -43,7 +43,7 @@ use pocketmine\math\Vector3;
 
 //Metadata
 
-//nbt
+//Nbt
 use pocketmine\nbt\NBT;
 
 //network
@@ -69,8 +69,6 @@ use pocketmine\tile\Chest;
 //Utils
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
-
-//Wizard
 
 //none of the above
 use pocketmine\Player;
@@ -106,9 +104,9 @@ class main extends PluginBase implements Listener {
 	}
 
 	public function setRank(Player $player){
-		$rankyml = new Config($this->getDataFolder() . "/rank.yml", Config::YAML);
+		$rankyml = new Config($this->getDataFolder()."/rank.yml", Config::YAML);
 		$rank = $rankyml->get($player->getName());
-		$player = $rankyml->get("RegularPlayerName");
+		$regular = $rankyml->get("RegularPlayerName");
 		if($rank == "Owner"){
 			$player->setNameTag(C::DARK_PURPLE."Owner".C::GRAY." | ".C::AQUA. $player->getName());
 		}
@@ -124,63 +122,64 @@ class main extends PluginBase implements Listener {
 		if($rank == "VIP"){
 			$player->setNameTag(C::GOLD."VIP".C::GRAY." | ".C::AQUA. $player->getName());
 		}else{
-			$player->setNameTag(C::YELLOW."$player".C::GRAY."| ".C::AQUA. $player->getName());
+			$player->setNameTag($regular.C::GRAY." | ".C::AQUA.$player->getName());
 		}
 	}
+	
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+		$name = $sender->getName();
         switch(strtolower($command->getName())){
-            
             case "home":
-            if($sender instanceof Player && $sender->isOp()){
-                $home = $this->homeData->get($args[0]);
-                if($home["world"] instanceof Level){
-                    $sender->setLevel($home["world"]);
-                    $sender->teleport(new Position($home["x"], $home["y"], $home["z"]));
-                    $sender->sendMessage(C::BLUE."You teleported home.");
-                }else{
-                    $sender->sendMessage(C::RED."That world is not loaded or Doesn't Exist!");
-                }
-                $sender->sendMessage(C::RED."You must be an op to issue this command");
-            }else{
-                if(!$sender->isOp()){
-                    $sender->sendMessage(C::RED."Please run command in-game.");
-                }
-            }
-            break;
-            
+				if($sender instanceof Player){
+					$home = $this->homeData->get($args[0]);
+					if($home["world"] instanceof Level){
+						$sender->setLevel($home["world"]);
+						$sender->teleport(new Position($home["x"], $home["y"], $home["z"]));
+						$sender->sendMessage(C::BLUE."You teleported to your home.");
+					}else{
+						$sender->sendMessage(C::RED."That world is not loaded or doesn't exist!");
+					}
+				}else{
+					$sender->sendMessage(C::DARK_RED."Please run this command IN-GAME!");
+				}
+			return true;
             case "sethome":
-            if ($sender instanceof Player){
-                if($sender->isOp()){
-                    $x = $sender->x;
-                    $y = $sender->y;
-                    $z = $sender->z;
-                    $level = $sender->getLevel();
-                    // $args[0] is the Name of the house -> /sethome <name>
-                    $this->homeData->set($args[0], array(
-                        "x" => $x,
-                        "y" => $y,
-                        "z" => $z,
-                        "world" => $level,
-                    ));
-                    $sender->sendMessage(C::GREEN."Your home is set at coordinates\n" . "X:" . C::YELLOW . $x . C::GREEN . "\nY:" . C::YELLOW . $y . C::GREEN . "\nZ:" . C::YELLOW . $z . C::GREEN . "\nUse /home < ". $args[0] ." > to teleport to this home!");
-                    $this->getLogger()->info($sender->getName() . " has set their home in world " . $sender->getLevel()->getName());
-                }
-                $sender->sendMessage(C::RED."You must be an op to issue this command");
-            }
-            $sender->sendMessage(C::RED. "Please run command in game.");
-            break;
-            
+				if($sender instanceof Player){
+					$x = $sender->x;
+					$y = $sender->y;
+					$z = $sender->z;
+					$level = $sender->getLevel();
+					$this->homeData->set($args[0], array(
+                       "x" => $x,
+                       "y" => $y,
+                       "z" => $z,
+                       "world" => $level,
+					));
+                    $sender->sendMessage(C::GREEN."Your home is set at coordinates\n"."X:".C::YELLOW.$x.C::GREEN."\nY:".C::YELLOW.$y.C::GREEN."\nZ:".C::YELLOW.$z.C::GREEN."\nUse /home < ".$args[0]." > to teleport to this home!");
+                    $this->getLogger()->info($name." has set their home in world: ".$sender->getLevel()->getName());
+				}else{
+					$sender->sendMessage(C::DARK_RED."Please run this command IN-GAME!");
+				}
+			return true;
             case "ishome":
-                $home = $this->homeData->get($args[0]);
+				$home = $this->homeData->get($args[0]);
                 if($home["world"] instanceof Level){
-                    $sender->sendMessage(C::BLUE."Yes, " . $args[0] . "is a house. It's location is " . $home["x"] ." " . $home["y"] . " " . $home["z"]. "In the world " . $home["world"]);
-                }else{
-                    $sender->sendMessage(C::BLUE. "No,-" . $args[0] . "-is not a house. Use the /sethome command to set a home with this name.");
-                }
-            break;
-        }
-        return true;
-    }
+					$sender->sendMessage(C::BLUE."Yes, ".$args[0]."is a house. It's location is ".$home["x"]." ".$home["y"]." ".$home["z"]."In the world ".$home["world"]);
+				}else{
+					$sender->sendMessage(C::BLUE."No, -".$args[0]."- is not a house. Use the /sethome command to set a home with this name.");
+				}
+			return true;
+			case "lobby":
+				if($sender instanceof Playerr){
+					$lobby = $this->getServer()->getDefaultLevel()->getSafeSpawn();
+					$sender->teleport($lobby);
+				}else{
+					$sender->sendMessage(C::DARK_RED."Please run this command IN-GAME!");
+				}
+			return true;
+		}
+	}
+	
 	public function onDisable(){
 		$this->saveResource("/homes.yml");
 		$this->getLogger()->info(C::RED."Shutting down BoxCore!");
