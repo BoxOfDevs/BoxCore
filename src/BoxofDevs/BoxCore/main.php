@@ -150,10 +150,10 @@ class main extends PluginBase implements Listener {
 					$z = $sender->z;
 					$level = $sender->getLevel();
 					$this->homeData->set($args[0], array(
-                       "x" => $x,
-                       "y" => $y,
-                       "z" => $z,
-                       "world" => $level,
+					"x" => $x,
+					"y" => $y,
+					"z" => $z,
+					"world" => $level,
 					));
                     $sender->sendMessage(C::GREEN."Your home is set at coordinates\n"."X:".C::YELLOW.$x.C::GREEN."\nY:".C::YELLOW.$y.C::GREEN."\nZ:".C::YELLOW.$z.C::GREEN."\nUse /home < ".$args[0]." > to teleport to this home!");
                     $this->getLogger()->info($name." has set their home in world: ".$sender->getLevel()->getName());
