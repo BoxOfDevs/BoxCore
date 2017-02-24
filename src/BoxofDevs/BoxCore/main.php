@@ -16,6 +16,7 @@ use pocketmine\entity\Effect;
 //Events
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\player\PlayerQuitEvent;
@@ -24,7 +25,6 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\entity\EntityLevelChangeEvent; 
-use pocketmine\event\plugin\PluginEvent;
 
 //Inventory
 use pocketmine\inventory\ChestInventory;
@@ -46,20 +46,16 @@ use pocketmine\math\Vector3;
 //Nbt
 use pocketmine\nbt\NBT;
 
-//network
+//Network
 use pocketmine\network\Network;
 
-//permission
+//Permission
 use pocketmine\permission\Permission;
 
 //Plugin
 use pocketmine\plugin\PluginBase;
 
-//resourcepacks
-
-//resources
-
-//scheduler
+//Scheduler
 use pocketmine\scheduler\PluginTask;
 
 //Tile
@@ -70,7 +66,7 @@ use pocketmine\tile\Chest;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
 
-//none of the above
+//Other
 use pocketmine\Player;
 use pocketmine\Server;
 
@@ -86,20 +82,19 @@ class main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->homeData = new Config($this->getDataFolder()."/homes.yml", Config::YAML, array());
 		$this->saveResource("/homes.yml");
-		$this->getLogger()->info(C::GREEN."BoxCore has loaded!");
+		$this->getLogger()->info(C::GREEN."BoxCore has enabled!");
 	}
 	
-
 	public function onJoin(PlayerJoinEvent $event){
 		$config = $this->getConfig();
-		#$event->setJoinMessage(""); //This could be useful in the future!
+		#$event->setJoinMessage("");
 		$player = $event->getPlayer();
 		$this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
 		$config = $this->getConfig();
-		#$event->setQuitMessage(""); //This could be useful in the future!
+		#$event->setQuitMessage("");
 		$player = $event->getPlayer();
 	}
 
