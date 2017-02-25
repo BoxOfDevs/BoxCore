@@ -82,19 +82,19 @@ class main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->homeData = new Config($this->getDataFolder()."/homes.yml", Config::YAML, array());
 		$this->saveResource("/homes.yml");
-		$this->getLogger()->info(C::GREEN."BoxCore has enabled!");
+		$this->getLogger()->info(C::GREEN."BoxCore has loaded!");
 	}
 	
 	public function onJoin(PlayerJoinEvent $event){
 		$config = $this->getConfig();
-		#$event->setJoinMessage("");
+		#$event->setJoinMessage("");//This could be useful in the future!
 		$player = $event->getPlayer();
 		$this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
 		$config = $this->getConfig();
-		#$event->setQuitMessage("");
+		#$event->setQuitMessage("");//This could be useful in the future!
 		$player = $event->getPlayer();
 	}
 
