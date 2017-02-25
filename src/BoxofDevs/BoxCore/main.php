@@ -126,13 +126,13 @@ class main extends PluginBase implements Listener {
         switch(strtolower($command->getName())){
             case "home":
 				if($sender instanceof Player){
-					$home = $this->homeData->get($args[0]);
+					$home = $this->homeData->get($sender.'-'.$args[0]);
 					if($home["world"] instanceof Level){
 						$sender->setLevel($home["world"]);
 						$sender->teleport(new Position($home["x"], $home["y"], $home["z"]));
 						$sender->sendMessage(C::BLUE."You teleported to your home.");
 					}else{
-						$sender->sendMessage(C::RED."That world is not loaded or doesn't exist!");
+						$sender->sendMessage(C::RED."That world is not loaded or your home doesn't exsist!");
 					}
 				}else{
 					$sender->sendMessage(C::DARK_RED."Please run this command IN-GAME!");
@@ -144,7 +144,7 @@ class main extends PluginBase implements Listener {
 					$y = $sender->y;
 					$z = $sender->z;
 					$level = $sender->getLevel();
-					$this->homeData->set($args[0], array(
+					$this->homeData->set($sender.'-'.$args[0], array(
 					"x" => $x,
 					"y" => $y,
 					"z" => $z,
