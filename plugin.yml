@@ -14,11 +14,11 @@ main: BoxofDevs\BoxCore\main
 description: "BoxCore: A Public Core plugin for PocketMine and Forks."
 commands:
     lobby:
-        description: "Lobby CMD"
+        description: "Go back to Lobby"
         aliases: [Lobby]
     home:
-        description: "Home CMD"
+        description: "Go to your Home"
     ishome:
-        description: "IsHome CMD"
+        description: "Check home"
     sethome:
-        description: "setHome CMD"
+        description: "Set your Home"
