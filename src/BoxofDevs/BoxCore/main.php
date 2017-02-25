@@ -156,9 +156,9 @@ class main extends PluginBase implements Listener {
 					$sender->sendMessage(C::DARK_RED."Please run this command IN-GAME!");
 				}
 			return true;
-            case "ishome":
+			case "ishome":
 				$home = $this->homeData->get($args[0]);
-                if($home["world"] instanceof Level){
+				if($home["world"] instanceof Level){
 					$sender->sendMessage(C::BLUE."Yes, ".$args[0]."is a house. It's location is ".$home["x"]." ".$home["y"]." ".$home["z"]."In the world ".$home["world"]);
 				}else{
 					$sender->sendMessage(C::BLUE."No, -".$args[0]."- is not a house. Use the /sethome command to set a home with this name.");
