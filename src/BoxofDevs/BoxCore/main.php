@@ -28,6 +28,7 @@ use pocketmine\event\entity\EntityLevelChangeEvent;
 
 //Inventory
 use pocketmine\inventory\ChestInventory;
+use pocketmine\inventory\EnderChestInventory;
 
 //Item
 use pocketmine\item\Item;
@@ -70,6 +71,9 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
+//Own
+use Chat\ChatTask;
+
 
 class main extends PluginBase implements Listener {
 	
@@ -82,19 +86,20 @@ class main extends PluginBase implements Listener {
 		$this->saveDefaultConfig();
 		$this->homeData = new Config($this->getDataFolder()."/homes.yml", Config::YAML, array());
 		$this->saveResource("/homes.yml");
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new ChatTask($this), 20);
 		$this->getLogger()->info(C::GREEN."BoxCore has loaded!");
 	}
 	
 	public function onJoin(PlayerJoinEvent $event){
 		$config = $this->getConfig();
-		#$event->setJoinMessage("");//This could be useful in the future!
+		#$event->setJoinMessage(""); //This could be useful in the future!
 		$player = $event->getPlayer();
 		$this->setRank($player);
 	}
 	
 	public function onQuit(PlayerQuitEvent $event){
 		$config = $this->getConfig();
-		#$event->setQuitMessage("");//This could be useful in the future!
+		#$event->setQuitMessage(""); //This could be useful in the future!
 		$player = $event->getPlayer();
 	}
 
