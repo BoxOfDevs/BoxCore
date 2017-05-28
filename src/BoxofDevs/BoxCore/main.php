@@ -111,7 +111,7 @@ class main extends PluginBase implements Listener {
 			$player->setNameTag(C::DARK_PURPLE."Owner".C::GRAY." | ".C::AQUA. $player->getName());
 		}
 		if($rank == "Co-Owner"){
-			$player->setNameTag(C::GREEN."Co-Owner:".C::GRAY." | ".C::AQUA. $player->getName());
+			$player->setNameTag(C::GREEN."Co-Owner".C::GRAY." | ".C::AQUA. $player->getName());
 		}
 		if($rank == "Admin"){
 			$player->setNameTag(C::DARK_BLUE."Admin".C::GRAY." | ".C::AQUA. $player->getName());
